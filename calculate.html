@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Project_first</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="spectre.min.css">
+    <link rel="stylesheet" href="spectre-exp.min.css">
+    <link rel="stylesheet" href="spectre-icons.min.css">    -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="js.js"></script>
+  </head>
+  <body class="bd-style">
+    <div class="container-style">
+      <h1>Определение масштабов химического заражения при авариях на предприятиях химической промышленности</h1>
+      <div class="formDiv">
+        <form name="form" action="">
+          <div class="form-group">
+            <lable for="sdor">Введите название СДЯВ</lable>
+            <select class="form-select" name="sdor" size="1" id="sdor" required>
+              <option value="chlorine">Хлор</option>
+              <option value="ammonia">Аммиак</option>
+              <option value="carbonOxide">Окись углерода</option>
+              <option value="ethyleneOxide">Окись этилена</option>
+              <option value="phosgene">Фосген</option>
+              <option value="cyanide">Цианистый водород</option>
+              <option value="hydrazine">Гидразин</option>
+            </select>
+          </div>
+          <br />
+          <div class="input-group">
+            <lable for="volume">Введите объём разрушеной емкости с СДЯВ, в тоннах</lable>
+            <input type="number" name="volume" id="volume" class="form-input" placeholder="Пример: 20" required min="1" max+"50000" step="1">
+          </div>
+          <br />
+          <div class="form-group">
+            <lable for="vsp">Введите степень вертикальной устойчивости воздуха</lable>
+            <input class="input-vsp" type="radio" name=vsp value="convection">Конвекция
+            <input class="input-vsp" type="radio" name=vsp value="isothermy" checked>Изитермия
+            <input class="input-vsp" type="radio" name=vsp value="inversion">Инверсия
+
+          </div>
+          <br />
+          <div class="input-group">
+            <lable for="wind">Введите скорость ветра на высоте 2 м, в м/с</lable>
+            <input type="number" name="wind" id="wind" class="form-input" placeholder="например: 2 или 2.0" min="0.1" max="10" step="0.1">
+          </div>
+          <br />
+          <div class="input-group">
+            <lable for="temperature">Введите температуру воздуха, в градусах Цельсия</lable>
+            <input type="number" name="temperature" id="temperature" class="form-input" placeholder="Например: 20 или 20.0" min="-50" max="50" step="0.2">
+          </div>
+          <br />
+          <div class="form-group">
+            <lable for="relief">Выберите вид рельефа</lable>
+            <select class="form-select" name="relief" size="1" id="relief">
+              <option value="plainFlat">Равнинный плоский</option>
+              <option value="plainWave">Равнинный волнистый</option>
+              <option value="plainHill">Равнинный холмистый</option>
+              <option value="ravine">Овражно-балочный</option>
+              <option value="hills">Холмистый</option>
+              <option value="footHills">Предгорье</option>
+            </select>
+          </div>
+          <br />
+          <div class="form-group">
+            <lable for="vegetation">Выберите вид ростительности (типы лесов)</lable>
+            <select class="form-select" name="vegetation" size="1" id="vegetation">
+              <option value="taigaNeedles">Тайговая: хвойные</option>
+              <option value="taigaFoliage">Тайговая: лиственные</option>
+              <option value="forestNeedles">Лесистая (лесисто-озерная): хвойные</option>
+              <option value="forestFoliage">Лесистая (лесисто-озерная): лиственные</option>
+              <option value="forestSteppeNeedles">Лесисто-степная (лесисто-болотистая): хвойные</option>
+              <option value="forestSteppeFoliage">Лесисто-степная (лесисто-болотистая): лиственные</option>
+              <option value="steppe">Степовая (озерно-болотистая)</option>
+              <option value="semidesert">Полупустынная (тундра)</option>
+              <option value="desert">Пустынная</option>
+            </select>
+          </div>
+          <br />
+          <div class="form-group">
+            <lable for="foliage">Выберите наличие лиственности</lable>
+            <select class="form-select" name="foliage" size="1" id="foliage">
+              <option value="foliage">Присутствует лиственность на деревьях</option>
+              <option value="notFoliage">Лиственность отсутствует (наличие снежного покрова)</option>
+            </select>
+          </div>
+          <br />
+          <div class="form-group">
+            <lable for="probability">Выберите значение необходимой вероятности</lable>
+            <select class="form-select" name="probability" size="1" id="probability">
+              <option value="0.5">0,5</option>
+              <option value="0.75">0,75</option>
+              <option value="0.9">0,9</option>
+            </select>
+          </div>
+          <br />
+
+
+
+          <button class="btn btn-success" id="calc">Расчитать</button>
+
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -788,9 +788,9 @@ dl dd {
   flex: 1 0 0;
 }
 
-.form-group:not(:last-child) {
+/*.form-group:not(:last-child) {
   margin-bottom: .4rem;
-}
+} */
 
 fieldset {
   margin-bottom: .8rem;
@@ -901,7 +901,7 @@ textarea.form-input {
 .is-error + .form-input-hint {
   color: #e85600;
 }
-
+/*
 .form-select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -953,7 +953,7 @@ textarea.form-input {
   height: 2rem;
   padding: .45rem 1.4rem .45rem .6rem;
 }
-
+*/
 .has-icon-left,
 .has-icon-right {
   position: relative;
