@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Result</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="spectre.min.css">
+    <link rel="stylesheet" href="spectre-exp.min.css">
+    <link rel="stylesheet" href="spectre-icons.min.css">    -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="js.js"></script>
+  </head>
+  <body class="bd-style">
+    <div class="container-style" id="CS">
+
+      <center><p>Нажмите кнопку снизу</p></center><br />
+      <center><button id="button">Расчитать</button></center>
+      <div id="result"></div>
+
+    </div>
+      <script>
+
+
+      $(document).ready(function (){
+         $('#button').bind('click', go);
+             });
+    function go (A,B,C,D,E,F,G,H,I,K,X,Y,Z,DIV){
+      var A = 1,
+        B = 2,
+        C = 3,
+        D = 4,
+        E = 5,
+        F = 6,
+        G = 7,
+        H = "abcd",
+        I = "baba",
+        K = "sisi",
+        X = raschet(X),
+        Y = raschet(Y),
+        Z = raschet2(Z),
+        DIV;
+        vivod();
+
+        function raschet (X,Y) {
+          var X = A + B,
+          Y = C + D;
+          return X, Y;
+        }
+
+        function raschet2 (Z){
+          var Z = E + A + F + G;
+          Z += I + K;
+          return Z;
+        }
+
+
+        function vivod (){
+          DIV = document.getElementById('result');
+          DIV.style.display = "inline-block";
+          DIV.innerHTML = "<p style='color: red;'>Условие:</p><p>При разрушении объекта химической промышленности, содержащего СДЯВ " + A + " емкостью " + B + " тонн, при температуре воздуха на высоте 2 м " + C + " <sup>o</sup>C, скорости ветра на высоте 2 м " + D + " м/с, степени вертикальной устойчивости воздуха " + E + " , типе окружающего рельефа " + F + ", типи растительности " + G + ", получены данные расчеты:</p><p>Радиус района аварии R<sub>A</sub> = " + H + " км</p>";
+          DIV.innerHTML += "<p>Глубина распространения первичного облака заражения СДЯВ определяется по формуле:</p><p>Г<sub>1</sub> = Г<sub>1Т</sub> * К<sub>t1</sub> * К<sub>к</sub> * К<sub>м</sub></p><p>Г<sub>1Т</sub> = " + I + " ;</p><p>К<sub>t1</sub> = " + K + " ;</p><p>К<sub>к</sub> = " + X + " ;</p><p>К<sub>м</sub> = " + Y + " ;</p><p>Г<sub>1</sub> = " + Z + " * " + A + " * " + B + " * " + C + " = " + D + " км</p>";
+          DIV.innerHTML += "<p>Глубина распространения вторичного облака заражения СДЯВ определяется по формуле:</p><p>Г<sub>2</sub> = Г<sub>2Т</sub> * К<sub>t2</sub> * К<sub>к</sub> * К<sub>м</sub></p><p>Г<sub>2Т</sub> = " + K + " ;</p><p>К<sub>t2</sub> = " + Z + " ;</p><p>К<sub>к</sub> = " + Y + " ;</p><p>К<sub>м</sub> = " + X + " ;</p><p>Г<sub>1</sub> = " + K + " * " + Z + " * " + A + " * " + B + " = " + C + " км</p>";
+          DIV.innerHTML += "<p>Площадь зоны распространения первичного облака определяется по формуле:</p><p>S<sub>1</sub> = ( Г<sub>1</sub> + R<sub>A</sub> )<sup>2</sup> * &#966;<sub>1</sub> / 60 ;</p><p>&#966;<sub>1</sub> = " + Z + " %, при P<sub>r</sub> = " + X + " ;</p><p>S<sub>1</sub> = ( " + Y + " + " + A+ " )<sup>2</sup> * " + B + " / 60 = " + Z + " км<sup>2</sup></p>";
+          DIV.innerHTML += "<p>Площадь зоны распространения вторичного облака определяется по формуле:</p><p>S<sub>1</sub> = ( Г<sub>2</sub> + R<sub>A</sub> )<sup>2</sup> * &#966;<sub>2</sub> / 60 ;</p><p>&#966;<sub>2</sub> = " + Z + " %, при P<sub>r</sub> = " + X + " ;</p><p>S<sub>2</sub> = ( " + D + " + " + A + " )<sup>2</sup> * " + B + " / 60 = " + Z + " км<sup>2</sup></p>";
+          DIV.innerHTML += "<center><button id='close'>Close</button></center>";
+
+          $(document).ready(function(){
+              $('#close').bind('click', closeDiv);
+          });
+
+          function closeDiv (){
+            DIV.style.display = "none";
+          }
+          return DIV;
+        }
+      }
+
+
+
+
+/*
+          function results (){
+            var x = document.getElementById('result');
+            x.style.display = "inline-block";
+            x.style.position = "absolute";
+            x.style.width = "80%";
+            x.style.height = "auto";
+            x.style.background = "#ddd";
+            x.style.top = "5%";
+            x.style.left = "10%";
+            x.innerHTML = "<p style='color: red;'>Условие:</p><p>При разрушении объекта химической промышленности, содержащего СДЯВ ...... емкостью ....... тонн, при температуре воздуха на высоте 2 м ....<sup>o</sup>C, скорости ветра на высоте 2 м .... м/с, степени вертикальной устойчивости воздуха ........, типе окружающего рельефа ......., типи растительности .............., получены данные расчеты:</p><p>Радиус района аварии R<sub>A</sub> = ... км</p>";
+            x.innerHTML += "<p>Глубина распространения первичного облака заражения СДЯВ определяется по формуле:</p><p>Г<sub>1</sub> = Г<sub>1Т</sub> * К<sub>t1</sub> * К<sub>к</sub> * К<sub>м</sub></p><p>Г<sub>1Т</sub> = ...</p><p>К<sub>t1</sub> = ...</p><p>К<sub>к</sub> = ...</p><p>К<sub>м</sub> = ...</p><p>Г<sub>1</sub> = ....................... км</p>";
+            x.innerHTML += "<p>Глубина распространения вторичного облака заражения СДЯВ определяется по формуле:</p><p>Г<sub>2</sub> = Г<sub>2Т</sub> * К<sub>t2</sub> * К<sub>к</sub> * К<sub>м</sub></p><p>Г<sub>2Т</sub> = ...</p><p>К<sub>t2</sub> = ...</p><p>К<sub>к</sub> = ...</p><p>К<sub>м</sub> = ...</p><p>Г<sub>1</sub> = ....................... км</p>";
+            x.innerHTML += "<p>Площадь зоны распространения первичного облака определяется по формуле:</p><p>S<sub>1</sub> = ( Г<sub>1</sub> + R<sub>A</sub> )<sup>2</sup> * &#966;<sub>1</sub> / 60 ;</p><p>&#966;<sub>1</sub> = ..... %, при P<sub>r</sub> = ..... ;</p><p>S<sub>1</sub> = .......... км<sup>2</sup></p>";
+            x.innerHTML += "<p>Площадь зоны распространения вторичного облака определяется по формуле:</p><p>S<sub>2</sub> = ( Г<sub>2</sub> + R<sub>A</sub> )<sup>2</sup> * &#966;<sub>2</sub> / 60</p><p>&#966;<sub>2</sub> = ..... %, при P<sub>r</sub> = .....</p><p>S<sub>2</sub> = ..........км<sup>2</sup></p>";
+            x.innerHTML += "<button id='close' oncklick='close()' style='color: #fff; background: red; border: 1px #000 solid; box-shadow: 1% 1% 0 #000; text-align: center;'>Закрыть</button>"
+            function close (){
+              var y = document.getElementById('result');
+              y.innerHTML = "";
+              y.style.display = "none";
+            }
+      }
+*/
+      </script>
+  </body>
+  </html>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Project_first</title>
+    <title>Konkursant</title>
     <link rel="stylesheet" href="style.css">
     <!-- <link rel="stylesheet" href="spectre.min.css">
     <link rel="stylesheet" href="spectre-exp.min.css">
@@ -12,7 +12,7 @@
   </head>
   <body class="bd-style">
     <div class="container-style">
-      <h1>Определение масштабов химического заражения при авариях на предприятиях химической промышленности</h1>
+      <h2>Определение масштабов химического заражения при авариях на предприятиях химической промышленности</h2>
       <div class="formDiv">
         <form name="form" action="">
           <div class="form-group">
@@ -30,20 +30,21 @@
           <br />
           <div class="input-group">
             <lable for="volume">Введите объём разрушеной емкости с СДЯВ, в тоннах</lable>
-            <input type="number" name="volume" id="volume" class="form-input" placeholder="Пример: 20" required min="1" max+"50000" step="1">
+            <input type="number" name="volume" id="volume" class="form-input" placeholder="Например: 20" required min="1" max+"50000" step="1">
           </div>
           <br />
           <div class="form-group">
             <lable for="vsp">Введите степень вертикальной устойчивости воздуха</lable>
-            <input class="input-vsp" type="radio" name=vsp value="convection">Конвекция
-            <input class="input-vsp" type="radio" name=vsp value="isothermy" checked>Изотермия
-            <input class="input-vsp" type="radio" name=vsp value="inversion">Инверсия
-
+            <select class="form-select" name="VSP" size="1" id="vsp">
+              <option value="convection">Конвекция</option>
+              <option value="isothermy">Изотермия</option>
+              <option value="inversion">Инверсия</option>
+            </select>
           </div>
           <br />
           <div class="input-group">
             <lable for="wind">Введите скорость ветра на высоте 2 м, в м/с</lable>
-            <input type="number" name="wind" id="wind" class="form-input" placeholder="например: 2 или 2.0" min="0.1" max="10" step="0.1">
+            <input type="number" name="wind" id="wind" class="form-input" placeholder="Например: 2 или 2.0" min="0.1" max="10" step="0.1">
           </div>
           <br />
           <div class="input-group">
@@ -98,10 +99,22 @@
 
 
 
-          <button class="btn btn-success" id="calc">Расчитать</button>
+          <center><button class="btn-calc" id="calc">Расчитать</button></center>
+
 
         </form>
+
       </div>
+
     </div>
+    <div class="right-menu">
+      <ul>
+        <li style="background-image: URL('images/home.gif');" title="Главная страница"><a href="index.html" >Главная страница</a></li>
+        <li style="background-image: URL('images/about-programm.gif');" title="О программе"><a href="about-programm.html">О программе</a></li>
+        <li style="background-image: URL('images/calculate.gif');" title="Произвести расчет"><a href="calculate.html">Произвести расчеты</a></li>
+        <li style="background-image: URL('images/developers.gif');" title="Разработчики"><a href="developers.html">Разработчики</a></li>
+      </ul>
+    </div>
+    <div id="result"></div>
   </body>
 </html>

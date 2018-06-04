@@ -11,29 +11,17 @@
     <script type="text/javascript" src="js.js"></script>
   </head>
   <body class="bd-style">
-    <div class="name"><h3>Программа для расчета масштабов химического заражения при авариях на объектах химической промышленности</h3></div>
+    <div class="name"><h2>Программа для расчета масштабов химического заражения при авариях на объектах химической промышленности</h2></div>
     <div class="menu">
-      <div class="menu-item-calc"><a href="calculate.html">ПРОИЗВЕСТИ РАСЧЕТ</a></div>
-      <div class="menu-item-progr"><a>О ПРОГРАММЕ</a></div>
-      <div class="menu-item-designer"><a>РАЗРАБОТЧИКИ</a></div>
+      <div class="menu-item-progr"><a href="about-programm.html" title="О программе">О ПРОГРАММЕ</a></div>
+      <div class="menu-item-calc"><a href="calculate.html" title="Произвести расчет">ПРОИЗВЕСТИ РАСЧЕТ</a></div>
+      <div class="menu-item-designer"><a href="developers.html" title="Разработчики">РАЗРАБОТЧИКИ</a></div>
     </div>
-    <div class="loading" id="load"></div>
-    <span class="load-span">Loading ...</span>
+    <div class="loading"></div>
+    <div class="load-span"><span>Загрузка </span><span>...</span></div>
 
 
 
-    <script>
-( function () {
-  var X = 0,
-  WIDTH = document.getElementById("load");
-  WIDTH.style.width = X + "%";
-    var stopInterval = setInterval( function(){
-      if (X <= 59){
-        X += 1;
-        WIDTH.style.width = X + "%";
-      }
-    }, 50);
-})();
-    </script>
+
   </body>
 </html>
