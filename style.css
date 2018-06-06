@@ -24,7 +24,7 @@ h6 {
   color: inherit;
   font-weight: 500;
   line-height: 1.2;
-  margin-bottom: .5em;
+  margin-bottom .5em;
   margin-top: 0;
   text-align: center;
 }
@@ -41,12 +41,14 @@ h2 {
   color: #fff;
   text-shadow: 0 0 1vw #000;
 }
-h3,
-.h3 {
+h3, .h3 {
   font-size: 2.5vw;
+  text-shadow: 0 0 1vw #000;
 }
 h4 {
   font-size: 1.5vw;
+  text-shadow: 0 0 1vw #fff;
+  color: #8B0000;
 }
 .formDiv {
   width: 100%;
@@ -55,7 +57,10 @@ h4 {
   line-height: 1.1vw;
 }
 p {
-  margin: 0 0 1rem;
+  margin: 0 0;
+  color: #fff;
+  font: 1vw "PT Sans", Tahoma, Arial;
+  line-height: 1.5vw;
 }
 lable {
   width: 49%;
@@ -65,31 +70,36 @@ lable {
 select {
   width: 50%;
   font-size: 1.1vw;
+  margin: 1% 0;
 }
 input {
-  width: 49.6%;
+  min-width: 49%;
+  width: 49.4%;
   font-size: 1vw;
+  margin: 1% 0;
 }
 .loading {
   display: inline-block;
   position: absolute;
   left: 20%;
   bottom: 9%;
-  height: 8%;
+  height: 6%;
   width: 1%;
-  background: green;
+  background: red;
   animation-name: load;
-	animation-duration: 5s;
+	animation-duration: 10s;
 	animation-iteration-count: infinite;
-	animation-timing-function: lianer;
+	animation-timing-function: linear;
 	animation-direction: normal;
 	animation-fill-mode: forwards;
   animation-iteration-count: 1;
 }
 @keyframes load {
 			0% {width: 1%;}
-      99% {width: 59.9%; opacity: 1;}
-			100% {width: 60%; opacity: 0;}
+      25% {width: 30%; opacity: 1; background: yellow;}
+      50% {width: 60%; opacity: 1; background: green;}
+      99% {width: 60%; opacity: 1; background: green;}
+			100% {width: 60%; opacity: 0; background: green}
 		}
 .load-span {
   display: inline-block;
@@ -100,8 +110,49 @@ input {
   left: 20%;
   font-size: 2vw;
   text-align: center;
+  animation-name: blink;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
 }
-
+@keyframes blink {
+  0% {opacity: 1;}
+  19% {opacity: 1;}
+  20% {opacity: 0;}
+  39% {opacity: 0;}
+  40% {opacity: 1;}
+  59% {opacity: 1;}
+  60% {opacity: 0;}
+  79% {opacity: 0;}
+  80% {opacity: 1;}
+  99% {opacity: 1;}
+  100% {opacity: 0;}
+}
+.load-span1 {
+  display: inline-block;
+  position: absolute;
+  width: 60%;
+  height: 7%;
+  top: 93%;
+  left: 20%;
+  font-size: 2vw;
+  text-align: center;
+  opacity: 0;
+  animation-name: load-complete;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 5s;
+  animation-iteration-count: initial;
+  animation-fill-mode: forwards;
+}
+@keyframes load-complete {
+  0% {opacity: 0;}
+  1% {opacity: 1;}
+  99% {opacity: 1;}
+  100% {opacity: 0;}
+}
 .menu-item-calc, .menu-item-progr,
 .menu-item-designer {
   display: inline-block;
@@ -109,10 +160,10 @@ input {
   margin: 0 15%;
   width: 30%;
   height: 15%;
-  background: #000;
+  background: #DCDCDC;
   text-align: center;
   border-radius: 500%;
-  box-shadow: 0 0 5% #000;
+  box-shadow: 0 0 1vw #000;
   animation-name: emergence;
   animation-duration: 6s;
   animation-iteration-count: infinite;
@@ -120,6 +171,11 @@ input {
 	animation-direction: normal;
 	animation-fill-mode: forwards;
   animation-iteration-count: 1;
+  transition: background .7s ease-out .2s;
+}
+.menu-item-calc:hover, .menu-item-progr:hover,
+.menu-item-designer:hover {
+  background: #708090;
 }
 .menu-item-progr {
   top: 28%;
@@ -144,14 +200,15 @@ input {
 }
 .menu a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   line-height: 7vw;
-  text-shadow: 0 0 3% #fff 1;
+  text-shadow: 0 0 .1vw #000;
 }
 .menu {
   font: 1.5vw 'PT Sans', Tahoma, Arial;
   text-transform: uppercase;
   font-size: 2.5vw;
+  font-style: bold;
 }
 @keyframes emergence {
   0%{opacity: 0;}
@@ -245,19 +302,86 @@ ul li a {
   text-decoration: none;
   color: #fff;
 }
+.p2 {
+  font: 1vw "PT Sans", Tahoma, Arial;
+  line-height: normal;
+  text-indent: 5%;
+  margin: 0;
+  text-align: justify;
+}
+.chem-pol {
+  width: 80%;
+  margin: 2% 10% 0 10%;
+  box-shadow: 0 0 .5vw #000;
+}
+.img-name {
+  text-align: center;
+  color: #8B0000;
+  text-shadow: 0 0 1vw #fff;
+}
 table {
   font: 1vw "PT Sans", Tahoma, Arial;
   color: #fff;
   line-height: 1vw;
   padding: 0;
   border-color: #fff;
+  border-collapse: collapse;
   text-align: center;
   align: center;
+  width: 100%;
 }
 table p {
   font-size: 1vw;
+  margin: 0;
 }
 .notes {
+  margin: 1% 0;
+  width: 100%;
   text-align: justify;
+  font: 1vw "PT Sans", Tahoma, Arial;
+  color: #fff;
+  line-height: 1vw;
+  padding: 0;
+}
+.notes tr td {
   vertical-align: top;
+}
+.formula {
+  text-align: center;
+  font-size: 1.3vw;
+  color: #ADFF2F;
+}
+.table-number {
+  text-align: right;
+  color: #8B0000;
+  text-shadow: 0 0 1vw #fff;
+  font-weight: bold;
+}
+.developer img {
+  width: 25%;
+  border-radius: 50%;
+  box-shadow: 0 0 1vw #000;
+}
+.developer > div {
+  display: block;
+}
+.info {
+  width: 70%;
+  margin: 5% 15%;
+  font: 1vw "PT Sans", Tahoma, Arial;
+  font-weight: 400;
+  line-height: 1.5vw;
+  text-align: left;
+  text-shadow: 0 0 1vw #000;
+}
+.info-td1 {
+  font-weight: 600;
+  width: 20%;
+  vertical-align: top;
+}
+.info-td2 {
+  width: 70%;
+  padding: 0 5%;
+  font-style: oblique;
+  text-align: center;
 }

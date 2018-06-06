@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Konkursant</title>
@@ -7,17 +7,16 @@
     <!-- <link rel="stylesheet" href="spectre.min.css">
     <link rel="stylesheet" href="spectre-exp.min.css">
     <link rel="stylesheet" href="spectre-icons.min.css">    -->
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="js.js"></script>
+    <script src="jquery.js"></script>
+    <script src="js.js"></script>
   </head>
   <body class="bd-style">
     <div class="container-style">
       <h2>Определение масштабов химического заражения при авариях на предприятиях химической промышленности</h2>
       <div class="formDiv">
-        <form name="form" action="">
-          <div class="form-group">
-            <lable for="sdor">Введите название СДЯВ</lable>
-            <select class="form-select" name="sdor" size="1" id="sdor" required>
+        <form name="form">
+          <lable for="sdor">Введите название СДЯВ</lable>
+            <select class="form-select" name="sdor" size="1" id="sdor">
               <option value="chlorine">Хлор</option>
               <option value="ammonia">Аммиак</option>
               <option value="carbonOxide">Окись углерода</option>
@@ -26,33 +25,23 @@
               <option value="cyanide">Цианистый водород</option>
               <option value="hydrazine">Гидразин</option>
             </select>
-          </div>
           <br />
-          <div class="input-group">
             <lable for="volume">Введите объём разрушеной емкости с СДЯВ, в тоннах</lable>
-            <input type="number" name="volume" id="volume" class="form-input" placeholder="Например: 20" required min="1" max+"50000" step="1">
-          </div>
+            <input type="number" name="volume" id="volume" class="form-input" placeholder="Например: 20" required min="1" max="50000" step="1">
           <br />
-          <div class="form-group">
             <lable for="vsp">Введите степень вертикальной устойчивости воздуха</lable>
             <select class="form-select" name="VSP" size="1" id="vsp">
               <option value="convection">Конвекция</option>
               <option value="isothermy">Изотермия</option>
               <option value="inversion">Инверсия</option>
             </select>
-          </div>
           <br />
-          <div class="input-group">
             <lable for="wind">Введите скорость ветра на высоте 2 м, в м/с</lable>
             <input type="number" name="wind" id="wind" class="form-input" placeholder="Например: 2 или 2.0" min="0.1" max="10" step="0.1">
-          </div>
           <br />
-          <div class="input-group">
             <lable for="temperature">Введите температуру воздуха, в градусах Цельсия</lable>
             <input type="number" name="temperature" id="temperature" class="form-input" placeholder="Например: 20 или 20.0" min="-50" max="50" step="0.2">
-          </div>
           <br />
-          <div class="form-group">
             <lable for="relief">Выберите вид рельефа</lable>
             <select class="form-select" name="relief" size="1" id="relief">
               <option value="plainFlat">Равнинный плоский</option>
@@ -62,9 +51,7 @@
               <option value="hills">Холмистый</option>
               <option value="footHills">Предгорье</option>
             </select>
-          </div>
           <br />
-          <div class="form-group">
             <lable for="vegetation">Выберите вид ростительности (типы лесов)</lable>
             <select class="form-select" name="vegetation" size="1" id="vegetation">
               <option value="taigaNeedles">Тайговая: хвойные</option>
@@ -77,35 +64,23 @@
               <option value="semidesert">Полупустынная (тундра)</option>
               <option value="desert">Пустынная</option>
             </select>
-          </div>
           <br />
-          <div class="form-group">
             <lable for="foliage">Выберите наличие лиственности</lable>
             <select class="form-select" name="foliage" size="1" id="foliage">
               <option value="foliage">Присутствует лиственность на деревьях</option>
               <option value="notFoliage">Лиственность отсутствует (наличие снежного покрова)</option>
             </select>
-          </div>
           <br />
-          <div class="form-group">
             <lable for="probability">Выберите значение необходимой вероятности</lable>
             <select class="form-select" name="probability" size="1" id="probability">
               <option value="0.5">0,5</option>
               <option value="0.75">0,75</option>
               <option value="0.9">0,9</option>
             </select>
-          </div>
           <br />
-
-
-
           <center><button class="btn-calc" id="calc">Расчитать</button></center>
-
-
         </form>
-
       </div>
-
     </div>
     <div class="right-menu">
       <ul>
