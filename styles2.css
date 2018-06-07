@@ -1,0 +1,15 @@
+h1, h2, h3, h4, h5 {
+    color: #fff;
+}
+
+.btn.btn-link {
+    color: #7ad;
+}
+
+.btn.btn-link:hover {
+    color: #9cf;
+}
+
+.form-label {
+    color: #ddd;
+}
